@@ -3,10 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Molar</title>
+    <title>Molar Chess</title>
+    <link rel="stylesheet" href="node_modules/chessground/assets/chessground.base.css" />
+    <link rel="stylesheet" href="node_modules/chessground/assets/chessground.brown.css" />
+    <link rel="stylesheet" href="node_modules/chessground/assets/chessground.cburnett.css" />
+    <link rel="stylesheet" href="renderer/styles.css" />
   </head>
 
   <body>
-    <h1>Molar</h1>
+    <div id="app">
+      <!-- Setup Modal -->
+      <div id="setup-modal" class="modal">
+        <div class="modal-content">
+          <h1>Molar Chess</h1>
+          <div class="setup-section">
+            <h2>Select Chess Engine</h2>
+            <button id="select-engine-btn" class="btn btn-primary">Select Engine</button>
+            <div id="engine-path" class="engine-path">No engine selected</div>
+          </div>
+          <div class="setup-section">
+            <h2>Choose Your Color</h2>
+            <div class="color-selection">
+              <label>
+                <input type="radio" name="color" id="color-white" value="white" checked />
+                <span>White</span>
+              </label>
+              <label>
+                <input type="radio" name="color" id="color-black" value="black" />
+                <span>Black</span>
+              </label>
+            </div>
+          </div>
+          <button id="start-game-btn" class="btn btn-success" disabled>Start Game</button>
+        </div>
+      </div>
+
+      <!-- Game Container -->
+      <div id="game-container">
+        <div class="game-header">
+          <h1>Molar Chess</h1>
+          <div class="controls">
+            <button id="new-game-btn" class="btn btn-secondary">New Game</button>
+            <div id="game-status" class="status">Ready</div>
+          </div>
+        </div>
+        <div class="board-container">
+          <div id="board" class="board"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="dist/renderer/index.js"></script>
   </body>
 </html>
